@@ -49,7 +49,7 @@ def ecx_shift(pinset, data, rd=False):
         time.sleep(5e-6)
         hw_write(pinset["XSCK"], 1)
         if rd:
-            indata = (indata << 1) | hw_read(pinset["SO"])
+            indata |= hw_read(pinset["SO"]) << i
         time.sleep(5e-6)
         hw_write(pinset["XSCK"], 0)
     return indata
@@ -94,7 +94,7 @@ def init(idx):
     ecx_comm(pinset, 0x80, 0x00)
     
     if res == 0x56:
-        ecx_burst([
+        ecx_burst(pinset, [
             0x01,
             0x00,
             0x80,
