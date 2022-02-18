@@ -136,4 +136,3 @@ def brightness(idx, percent):
     percent = min(percent, 100)
     ecx_comm(pinset, 0x11, 0x07)
     ecx_comm(pinset, 0x13, percent)
-    
