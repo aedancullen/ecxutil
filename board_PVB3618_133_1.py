@@ -96,6 +96,7 @@ def init(idx):
     if res == 0x56:
         ecx_burst(pinset, [
             0x01,
+            0x02, # LVDS_MAP set (VESA)
             0x00,
             0x80,
             0x0B, # PRTSWP set
