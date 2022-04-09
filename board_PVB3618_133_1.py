@@ -104,6 +104,19 @@ def init(idx):
             0x00,
             0x80,
             0x0B, # PRTSWP set
+            0x08,
+            0x00,
+            0x14, # C_SLOPE=4
+            0x0C,
+            0x00,
+            0x00,
+            0x00,
+            0x00,
+            0x00,
+            0x00,
+            0x44,
+            0x00,
+            0x07, # WB_CALEN, L_SEAMLESSEN, L_AT_CALEN set
         ])
         return 0
     else:
@@ -139,5 +152,4 @@ def brightness(idx, percent):
 
     percent = max(percent, 5)
     percent = min(percent, 100)
-    ecx_comm(pinset, 0x11, 0x07)
     ecx_comm(pinset, 0x13, percent)
