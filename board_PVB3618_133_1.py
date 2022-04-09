@@ -88,9 +88,9 @@ def init(idx):
     hw_direction(pinset["SO"], "in")
     hw_direction(pinset["SI"], "low")
 
-    time.sleep(16e-3)
+    time.sleep(200e-6)
     hw_write(pinset["XCLR"], 1)
-    time.sleep(16e-3)
+    time.sleep(200e-6)
 
     ecx_comm(pinset, 0x80, 0x01)
     ecx_comm(pinset, 0x81, 0x7F)
